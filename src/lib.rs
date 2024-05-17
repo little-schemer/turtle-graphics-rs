@@ -1,14 +1,16 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+use turtle::*;
+
+
+pub trait RecursiveFigure {
+    fn set_start<P: Into<Point>>(&mut self, position: P, angle: Angle);
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+impl RecursiveFigure for Turtle {
+    fn set_start<P: Into<Point>>(&mut self, position: P, angle: Angle) {
+        self.hide();
+        self.pen_up();
+        self.go_to(position);
+        self.set_heading(angle);
+        self.pen_down();
     }
 }
