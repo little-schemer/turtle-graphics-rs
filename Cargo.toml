@@ -1,0 +1,12 @@
+[package]
+name = "turtle_graphics"
+version = "0.1.0"
+edition = "2021"
+
+# see to https://turtle.rs/guide/quickstart/
+
+[dependencies]
+turtle = {git = "https://github.com/sunjay/turtle"}
+
+[profile.dev.package."*"]
+opt-level = 3
