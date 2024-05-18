@@ -1,11 +1,14 @@
 use turtle::*;
 
+pub mod recursive_figure;
 
-pub trait RecursiveFigure {
+
+pub trait Tool {
     fn set_start<P: Into<Point>>(&mut self, position: P, angle: Angle);
 }
 
-impl RecursiveFigure for Turtle {
+
+impl Tool for Turtle {
     fn set_start<P: Into<Point>>(&mut self, position: P, angle: Angle) {
         self.hide();
         self.pen_up();

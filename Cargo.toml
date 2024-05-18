@@ -6,7 +6,8 @@ edition = "2021"
 # see to https://turtle.rs/guide/quickstart/
 
 [dependencies]
-turtle = {git = "https://github.com/sunjay/turtle"}
+turtle = { git = "https://github.com/sunjay/turtle" }
+clap   = { version = "4.5.4", features = ["derive"] }
 
 [profile.dev.package."*"]
 opt-level = 3
