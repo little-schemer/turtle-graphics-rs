@@ -8,6 +8,7 @@ use turtle_graphics::*;
 use turtle_graphics::recursive_figure::*;
 
 
+// コマンドライン処理
 #[derive(Parser)]
 #[command(
     name  = "koch_curve",
@@ -33,6 +34,7 @@ struct Args {
     size: f64,
 }
 
+
 fn main() {
     let args = Args::parse();
 
@@ -40,6 +42,7 @@ fn main() {
     let mut turtle  = drawing.add_turtle();
 
     drawing.set_size((800, 600));
+    drawing.set_title("Koch Curve");
     turtle.set_speed("instant");
 
     turtle.set_start((-args.size / 2.0, args.size / 2.0 / 3.0_f64.sqrt()), 0.0);
