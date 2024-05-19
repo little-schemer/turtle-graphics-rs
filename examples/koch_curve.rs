@@ -1,3 +1,7 @@
+//!
+//! Koch 曲線
+//!
+
 use clap::Parser;
 use turtle::*;
 use turtle_graphics::*;
@@ -5,8 +9,10 @@ use turtle_graphics::recursive_figure::*;
 
 
 #[derive(Parser)]
-#[command(name  = "koch_curve")]
-#[command(about = "Turtle Graphics による Koch 曲線")]
+#[command(
+    name  = "koch_curve",
+    about = "Turtle Graphics による Koch 曲線"
+)]
 struct Args {
     #[arg(
         short,
