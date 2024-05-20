@@ -5,6 +5,7 @@ pub trait RecursiveFigure {
     fn koch_curve(&mut self, len: f64, n: usize);
     fn c_curve(&mut self, len: f64, n: usize);
     fn cross_stitch(&mut self, len: f64, n:usize);
+    fn tree(&mut self, len: f64, angle: f64, level: usize);
 }
 
 
@@ -53,6 +54,25 @@ impl RecursiveFigure for Turtle {
             self.cross_stitch(len, n - 1);
         } else {
             self.forward(len);
+        }
+    }
+
+
+    fn tree(&mut self, len: f64, angle: f64, level: usize) {
+        if level > 0 {
+            self.forward(len);
+
+            // 左の枝
+            self.left(angle);
+            self.tree(len * 0.9, angle, level - 1);
+
+            // 右の枝
+            self.right(angle * 2.0);
+            self.tree(len * 0.9, angle, level - 1);
+
+            // 始点に戻る
+            self.left(angle);
+            self.backward(len);
         }
     }
 }
