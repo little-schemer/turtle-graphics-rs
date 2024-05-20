@@ -11,8 +11,8 @@ use turtle_graphics::recursive_figure::*;
 // コマンドライン処理
 #[derive(Parser)]
 #[command(
-    name  = "koch_curve",
-    about = "Turtle Graphics による Koch 曲線"
+    name  = "tree"
+    about = "Turtle Graphics による木構造"
 )]
 struct Args {
     #[arg(

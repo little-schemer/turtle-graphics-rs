@@ -20,7 +20,7 @@ impl Figure for Turtle {
 
 #[derive(Parser)]
 #[command(
-    name  = "Spiral1",
+    name  = "spiral1",
     about = "螺旋"
 )]
 struct Args {
