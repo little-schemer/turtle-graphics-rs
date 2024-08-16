@@ -11,7 +11,7 @@ use turtle_graphics::recursive_figure::*;
 // コマンドライン処理
 #[derive(Parser)]
 #[command(
-    name  = "tree"
+    name  = "tree",
     about = "Turtle Graphics による木構造"
 )]
 struct Args {
